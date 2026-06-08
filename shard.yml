@@ -1,0 +1,13 @@
+name: cr_1brc
+version: 0.1.0
+
+authors:
+  - Jeppe Lillevang Salling <jeppe.lillevang@gmail.com>
+
+targets:
+  naive:
+    main: src/naive.cr
+
+crystal: '>= 1.20.2'
+
+license: MIT

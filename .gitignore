@@ -1,0 +1,9 @@
+measurements*.txt
+/docs/
+/lib/
+/bin/
+/.shards/
+*.dwarf
+
+*.lines
+*.out
