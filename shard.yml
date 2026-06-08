@@ -7,6 +7,8 @@ authors:
 targets:
   naive:
     main: src/naive.cr
+  int:
+    main: src/int.cr
 
 crystal: '>= 1.20.2'
 

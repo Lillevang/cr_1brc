@@ -17,7 +17,7 @@ one target exists; single `time` runs are fine for the headline baseline.
 | #  | Step                        | 10M     | 1B    | Speedup vs m1 | Correct? | Notes                              |
 |----|-----------------------------|---------|-------|---------------|----------|------------------------------------|
 | m1 | Naive baseline              | ~0.72 s | ~74 s | 1.0×          | ✅        | `split` + `Float64` + `Hash`; single core, 99% CPU, IO-light |
-| m2 | Integer temperatures        | —       | —     | —             | —        | parse to tenths as `Int64`         |
+| m2 | Integer temperatures        |  temps662±5 ms (1.10±0.01×)       | 65.98±0.66 s (1.12±0.03×)     | 1.12×       | ✅        | to_f→byte walk, Int64 sum; ranges disjoint at both scales    |
 | m3 | Parse in place              | —       | —     | —             | —        | drop `split`, scan bytes           |
 | m4 | Reusable read buffer / mmap | —       | —     | —             | —        |                                    |
 | m5 | Custom byte-keyed map        | —       | —     | —             | —        |                                    |

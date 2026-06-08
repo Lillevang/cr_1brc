@@ -117,7 +117,7 @@ confirmed to be rounding-only, and note it in `RESULTS.md`.
 | #  | Step                        | Idea                                                        | Status  |
 |----|-----------------------------|-------------------------------------------------------------|---------|
 | m1 | Naive baseline              | `split` on `;`, `Float64` parse, `Hash` aggregate           | ✅ done |
-| m2 | Integer temperatures        | Parse to tenths as `Int64`; exact sum, no `to_f`            | planned |
+| m2 | Integer temperatures        | Parse to tenths as `Int64`; exact sum, no `to_f`            | ✅ done |
 | m3 | Parse in place              | Drop `split`; scan bytes, no per-line substrings            | planned |
 | m4 | Reusable read buffer / mmap | Stop minting a `String` per line                            | planned |
 | m5 | Custom byte-keyed map        | Open-addressing table keyed on name bytes                  | planned |
@@ -129,16 +129,7 @@ the next rung rather than assuming.
 
 ## Results
 
-Measured on my own machine (single dev box, WSL2, file warm in page cache).
-These are **not** comparable to the official leaderboard, which ran on a
-32-core Hetzner AX161 against a different key set — this is a relative
-speedup curve against m1, not an absolute ranking.
-
-| #  | Step           | 10M     | 1B       | Speedup vs m1 | Notes                          |
-|----|----------------|---------|----------|---------------|--------------------------------|
-| m1 | Naive baseline | ~0.72 s | ~74 s    | 1.0×          | single core; 99% CPU, IO-light |
-
-(Subsequent rows added as each rung is measured.)
+See the RESULTS.md file
 
 ## Credits
 
