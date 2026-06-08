@@ -118,7 +118,7 @@ confirmed to be rounding-only, and note it in `RESULTS.md`.
 |----|-----------------------------|-------------------------------------------------------------|---------|
 | m1 | Naive baseline              | `split` on `;`, `Float64` parse, `Hash` aggregate           | ✅ done |
 | m2 | Integer temperatures        | Parse to tenths as `Int64`; exact sum, no `to_f`            | ✅ done |
-| m3 | Parse in place              | Drop `split`; scan bytes, no per-line substrings            | planned |
+| m3 | Parse in place              | Drop `split`; scan bytes, no per-line substrings            | ✅ done |
 | m4 | Reusable read buffer / mmap | Stop minting a `String` per line                            | planned |
 | m5 | Custom byte-keyed map        | Open-addressing table keyed on name bytes                  | planned |
 | m6 | Parallelize                 | Split input across cores, local maps, merge                 | planned |
